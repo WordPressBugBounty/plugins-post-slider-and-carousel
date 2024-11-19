@@ -34,14 +34,21 @@ class Psac_Script {
 	 */
 	function  psac_admin_script_style($hook_suffix) {
 
+		/***** Scripts *****/
 		// For VC Front End Page Editing
 		if( function_exists('vc_is_frontend_editor') && vc_is_frontend_editor() ) {
 			wp_register_script( 'psac-vc-frontend', PSAC_URL . 'assets/js/vc/psac-vc-frontend.js', array(), PSAC_VERSION, true );
 			wp_enqueue_script( 'psac-vc-frontend' );
 		}
 		
-		// Styles
+		/***** Styles *****/
 		wp_register_style( 'psac-admin-style', PSAC_URL . 'assets/css/psac-admin.css', array(), PSAC_VERSION );
+		
+		// FS Pricing CSS
+		if( PSAC_SCREEN_ID.'_page_psac-about-pricing' == $hook_suffix ) {
+			wp_register_style( 'psac-fs-pricing', PSAC_URL . 'assets/css/fs-pricing.css', array(), PSAC_VERSION );
+			wp_enqueue_style( 'psac-fs-pricing' );
+		}
 		
 		wp_register_script( 'psac-shrt-generator', PSAC_URL . 'assets/js/psac-shortcode-generator.js', array( 'jquery' ), PSAC_VERSION, true );
 		wp_localize_script( 'psac-shrt-generator', 'Psac_Shrt_Generator', array(

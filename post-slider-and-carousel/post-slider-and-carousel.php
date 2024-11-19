@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Post Slider and Carousel with Widget
  * Plugin URI: https://demo.infornweb.com/post-slider-and-carousel/
- * Version: 3.2.6
+ * Version: 3.2.7
  * Description: Posts Slider or Post Carousel add WordPress posts in slider & carousel layouts on your WordPress website. Also added Latest/Recent vertical post scrolling widget.
  * Text Domain: post-slider-and-carousel
  * Domain Path: /languages/
@@ -27,7 +27,7 @@ if ( function_exists( 'psac_fs' ) ) {
  * @since 1.0.0
  */
 if( !defined( 'PSAC_VERSION' ) ) {
-	define( 'PSAC_VERSION', '3.2.6' ); // Version of plugin
+	define( 'PSAC_VERSION', '3.2.7' ); // Version of plugin
 }
 if( !defined( 'PSAC_DIR' ) ) {
 	define( 'PSAC_DIR', dirname( __FILE__ ) ); // Plugin dir
