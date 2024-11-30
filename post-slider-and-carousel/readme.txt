@@ -1,18 +1,18 @@
 ﻿=== Post Slider and Post Carousel with Post Vertical Scrolling Widget - A Responsive Post Slider ===
 Contributors: infornweb, pluginandplay 
-Tags: post slider, post carousel, blog, recent posts, vertical post scrolling
+Tags: post slider, post carousel, blog, recent post, vertical post scrolling
 Requires at least: 4.7
 Requires PHP: 5.4
-Tested up to: 6.7
-Stable tag: 3.2.7
+Tested up to: 6.7.1
+Stable tag: 3.2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Posts Slider or Post Carousel display WordPress posts in slider and carousel layouts with shortcode and Latest/Recent vertical post scrolling widget.
+Post Slider and Post Carousel display WordPress post in slider and carousel layouts with shortcode and Latest/Recent vertical post scrolling widget.
 
 == Description ==
 
-Display Posts Slider or Post Carousel on your WordPress website - Post Slider and Post Carousel is powerful and minimal plugin to create sliders which was never possible before. Fully responsive and works with any WordPress theme. Create beautiful sliders and tell stories without any code.
+Display Post Slider or Post Carousel on your WordPress website - Post Slider and Post Carousel is powerful and minimal plugin to create sliders which was never possible before. Fully responsive and works with any WordPress theme. Create beautiful sliders and tell stories without any code.
 
 Post Slider and Post Carousel having 2 shortcodes with 2 designs for each shortcode and one vertical post scrolling widget.
 
@@ -217,6 +217,9 @@ Yes, Post Slider and Carousel will work with any WordPress themes, but may requi
 2. Post Carousel Designs.
 
 == Changelog ==
+
+= 3.2.8 (30 Nov, 2024) =
+* [*] Fixed translation loading notice in WordPress 6.7
 
 = 3.2.7 (20 Nov, 2024) =
 * [*] Check compatibility with WordPress 6.7
