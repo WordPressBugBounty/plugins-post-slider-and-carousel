@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Post Slider and Carousel with Widget
  * Plugin URI: https://demo.infornweb.com/post-slider-and-carousel/
- * Version: 3.2.8
+ * Version: 3.2.9
  * Description: Posts Slider or Post Carousel add WordPress posts in slider & carousel layouts on your WordPress website. Also added Latest/Recent vertical post scrolling widget.
  * Text Domain: post-slider-and-carousel
  * Domain Path: /languages/
@@ -27,7 +27,7 @@ if ( function_exists( 'psac_fs' ) ) {
  * @since 1.0.0
  */
 if( !defined( 'PSAC_VERSION' ) ) {
-	define( 'PSAC_VERSION', '3.2.8' ); // Version of plugin
+	define( 'PSAC_VERSION', '3.2.9' ); // Version of plugin
 }
 if( !defined( 'PSAC_DIR' ) ) {
 	define( 'PSAC_DIR', dirname( __FILE__ ) ); // Plugin dir
@@ -120,22 +120,16 @@ function psac_init_processes() {
 
 	// Load Plugin Textdomain
 	psac_load_textdomain();
-}
-add_action( 'init', 'psac_init_processes' );
 
-/**
- * Function to run after all plugins have loaded
- * 
- * @package Post Slider and Carousel
- * @since 1.0.0
- */
-function psac_plugins_loaded() {
-
+	/*
+	 * Plugin Menu Name just to check the screen ID to load condition based assets
+	 * This var is not going to be echo anywhere. `sanitize_title` will take care of string.
+	 */
 	if( ! defined( 'PSAC_SCREEN_ID' ) ) {
 		define( 'PSAC_SCREEN_ID', sanitize_title(__('Post Slider and Carousel', 'post-slider-and-carousel')) );
 	}
 }
-add_action('plugins_loaded', 'psac_plugins_loaded');
+add_action( 'init', 'psac_init_processes' );
 
 // Including freemius file
 include_once( PSAC_DIR . '/freemius.php' );
