@@ -79,13 +79,13 @@ class Psac_post_scrolling_Widget extends WP_Widget {
 	?>
 		<!-- Title -->
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e( 'Title', 'post-slider-and-carousel' ); ?>:</label>
-			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e( 'Title', 'post-slider-and-carousel' ); ?>:</label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 
 		<!-- Display Category -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Category', 'post-slider-and-carousel' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>"><?php esc_html_e( 'Category', 'post-slider-and-carousel' ); ?>:</label>
 			<?php
 				$dropdown_args = array(
 										'taxonomy'          => PSAC_CAT,
@@ -101,89 +101,87 @@ class Psac_post_scrolling_Widget extends WP_Widget {
 
 		<!-- Number of Items -->
 		<p>
-			<label for="<?php echo $this->get_field_id('num_items'); ?>"><?php esc_html_e( 'Number of Items', 'post-slider-and-carousel' ); ?>:</label>
-			<input class="widefat" id="<?php echo $this->get_field_id('num_items'); ?>" name="<?php echo $this->get_field_name('num_items'); ?>" type="text" value="<?php echo $instance['num_items']; ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id('num_items') ); ?>"><?php esc_html_e( 'Number of Items', 'post-slider-and-carousel' ); ?>:</label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('num_items') ); ?>" name="<?php echo esc_attr( $this->get_field_name('num_items') ); ?>" type="text" value="<?php echo esc_attr( $instance['num_items'] ); ?>" />
 		</p>
 
 		<!-- Query Offset -->
 		<p>
-			<label for="<?php echo $this->get_field_id('query_offset'); ?>"><?php esc_html_e( 'Query Offset', 'post-slider-and-carousel' ); ?>:</label>
-			<input class="widefat" id="<?php echo $this->get_field_id('query_offset'); ?>" name="<?php echo $this->get_field_name('query_offset'); ?>" type="text" value="<?php echo $instance['query_offset']; ?>"  />
-			<em><?php _e('Query `offset` parameter to exclude number of post. Leave empty for default.', 'post-slider-and-carousel'); ?></em><br/>
-			<em><?php _e('Note: This parameter will not work when Number of Items is set to -1.', 'post-slider-and-carousel'); ?></em>
+			<label for="<?php echo esc_attr( $this->get_field_id('query_offset') ); ?>"><?php esc_html_e( 'Query Offset', 'post-slider-and-carousel' ); ?>:</label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('query_offset') ); ?>" name="<?php echo esc_attr( $this->get_field_name('query_offset') ); ?>" type="text" value="<?php echo esc_attr( $instance['query_offset'] ); ?>"  />
+			<em><?php esc_html_e('Query `offset` parameter to exclude number of post. Leave empty for default.', 'post-slider-and-carousel'); ?></em><br/>
+			<em><?php esc_html_e('Note: This parameter will not work when Number of Items is set to -1.', 'post-slider-and-carousel'); ?></em>
 		</p>
 
 		<!-- Display Date -->		
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('date') ); ?>"><?php _e( 'Show Date', 'post-slider-and-carousel' ); ?>:</label>
-				<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'date' ) ); ?>">
-					<option value="1" <?php selected( $instance['date'], 1 ); ?>><?php _e('Yes', 'post-slider-and-carousel'); ?></option>
-					<option value="0" <?php selected( $instance['date'], 0 ); ?>><?php _e('No', 'post-slider-and-carousel'); ?></option>
-				</select>
+			<label for="<?php echo esc_attr( $this->get_field_id('date') ); ?>"><?php esc_html_e( 'Show Date', 'post-slider-and-carousel' ); ?>:</label>
+			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'date' ) ); ?>">
+				<option value="1" <?php selected( $instance['date'], 1 ); ?>><?php esc_html_e('Yes', 'post-slider-and-carousel'); ?></option>
+				<option value="0" <?php selected( $instance['date'], 0 ); ?>><?php esc_html_e('No', 'post-slider-and-carousel'); ?></option>
+			</select>
 		</p>
 
 		<!-- Display Category -->		
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('show_category') ); ?>"><?php _e( 'Show Category', 'post-slider-and-carousel' ); ?>:</label>
-					<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_category' ) ); ?>">
-						<option value="1" <?php selected( $instance['show_category'], 1 ); ?>><?php _e('Yes', 'post-slider-and-carousel'); ?></option>
-						<option value="0" <?php selected( $instance['show_category'], 0 ); ?>><?php _e('No', 'post-slider-and-carousel'); ?></option>
-					</select>
+			<label for="<?php echo esc_attr( $this->get_field_id('show_category') ); ?>"><?php esc_html_e( 'Show Category', 'post-slider-and-carousel' ); ?>:</label>
+			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_category' ) ); ?>">
+				<option value="1" <?php selected( $instance['show_category'], 1 ); ?>><?php esc_html_e('Yes', 'post-slider-and-carousel'); ?></option>
+				<option value="0" <?php selected( $instance['show_category'], 0 ); ?>><?php esc_html_e('No', 'post-slider-and-carousel'); ?></option>
+			</select>
 		</p>	
 		
 
 		<!-- Show Thumb -->		
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('show_thumb') ); ?>"><?php _e( 'Display Thumbnail', 'post-slider-and-carousel' ); ?>:</label>
-				<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_thumb' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_thumb' ) ); ?>">
-					<option value="1" <?php selected( $instance['show_thumb'], 1 ); ?>><?php _e('Yes', 'post-slider-and-carousel'); ?></option>
-					<option value="0" <?php selected( $instance['show_thumb'], 0 ); ?>><?php _e('No', 'post-slider-and-carousel'); ?></option>
-				</select>
+			<label for="<?php echo esc_attr( $this->get_field_id('show_thumb') ); ?>"><?php esc_html_e( 'Display Thumbnail', 'post-slider-and-carousel' ); ?>:</label>
+			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_thumb' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_thumb' ) ); ?>">
+				<option value="1" <?php selected( $instance['show_thumb'], 1 ); ?>><?php esc_html_e('Yes', 'post-slider-and-carousel'); ?></option>
+				<option value="0" <?php selected( $instance['show_thumb'], 0 ); ?>><?php esc_html_e('No', 'post-slider-and-carousel'); ?></option>
+			</select>
 		</p>
 
 		<!-- Open Link in a New Tab -->
-		
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('link_target') ); ?>"><?php _e( 'Open Link in a New Tab', 'post-slider-and-carousel' ); ?>:</label>
-				<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link_target' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link_target' ) ); ?>">
-					<option value="1" <?php selected( $instance['link_target'], 1 ); ?>><?php _e('Yes', 'post-slider-and-carousel'); ?></option>
-					<option value="0" <?php selected( $instance['link_target'], 0 ); ?>><?php _e('No', 'post-slider-and-carousel'); ?></option>
-				</select>
+			<label for="<?php echo esc_attr( $this->get_field_id('link_target') ); ?>"><?php esc_html_e( 'Open Link in a New Tab', 'post-slider-and-carousel' ); ?>:</label>
+			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link_target' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link_target' ) ); ?>">
+				<option value="1" <?php selected( $instance['link_target'], 1 ); ?>><?php esc_html_e('Yes', 'post-slider-and-carousel'); ?></option>
+				<option value="0" <?php selected( $instance['link_target'], 0 ); ?>><?php esc_html_e('No', 'post-slider-and-carousel'); ?></option>
+			</select>
 		</p>
 		
 		<!--  Display Short Content -->
-		
 		<p>
-					<label for="<?php echo esc_attr( $this->get_field_id('show_content') ); ?>"><?php _e( 'Show Short Content', 'post-slider-and-carousel' ); ?>:</label>
-					<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_content' ) ); ?>">
-						<option value="1" <?php selected( $instance['show_content'], 1 ); ?>><?php _e('Yes', 'post-slider-and-carousel'); ?></option>
-						<option value="0" <?php selected( $instance['show_content'], 0 ); ?>><?php _e('No', 'post-slider-and-carousel'); ?></option>
-					</select>
+			<label for="<?php echo esc_attr( $this->get_field_id('show_content') ); ?>"><?php esc_html_e( 'Show Short Content', 'post-slider-and-carousel' ); ?>:</label>
+			<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'show_content' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_content' ) ); ?>">
+				<option value="1" <?php selected( $instance['show_content'], 1 ); ?>><?php esc_html_e('Yes', 'post-slider-and-carousel'); ?></option>
+				<option value="0" <?php selected( $instance['show_content'], 0 ); ?>><?php esc_html_e('No', 'post-slider-and-carousel'); ?></option>
+			</select>
 		</p>
 		
 		<!-- Number of content_words_limit -->
 		<p>
-			<label for="<?php echo $this->get_field_id('content_words_limit'); ?>"><?php esc_html_e( 'Content words limit', 'post-slider-and-carousel' ); ?>:</label>
-			<input class="widefat" id="<?php echo $this->get_field_id('content_words_limit'); ?>" name="<?php echo $this->get_field_name('content_words_limit'); ?>" type="text" value="<?php echo $instance['content_words_limit']; ?>"  />
-			<em><?php _e('Content words limit will only work if Display Short Content checked', 'post-slider-and-carousel'); ?></em>
+			<label for="<?php echo esc_attr( $this->get_field_id('content_words_limit') ); ?>"><?php esc_html_e( 'Content words limit', 'post-slider-and-carousel' ); ?>:</label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('content_words_limit') ); ?>" name="<?php echo esc_attr( $this->get_field_name('content_words_limit') ); ?>" type="text" value="<?php echo esc_attr( $instance['content_words_limit'] ); ?>"  />
+			<em><?php esc_html_e('Content words limit will only work if Display Short Content checked', 'post-slider-and-carousel'); ?></em>
 	   </p>
 
 		<!-- Height -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'height' ); ?>"><?php _e( 'Height', 'post-slider-and-carousel' ); ?>:</label>
-			<input type="text" name="<?php echo $this->get_field_name( 'height' ); ?>"  value="<?php echo $instance['height']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'height' ); ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'height' ) ); ?>"><?php esc_html_e( 'Height', 'post-slider-and-carousel' ); ?>:</label>
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'height' ) ); ?>"  value="<?php echo esc_attr( $instance['height'] ); ?>" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'height' ) ); ?>" />
 		</p>
 
 		<!-- Pause -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'pause' ); ?>"><?php _e( 'Pause', 'post-slider-and-carousel' ); ?>:</label>
-			<input type="text" name="<?php echo $this->get_field_name( 'pause' ); ?>"  value="<?php echo $instance['pause']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'pause' ); ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'pause' ) ); ?>"><?php esc_html_e( 'Pause', 'post-slider-and-carousel' ); ?>:</label>
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'pause' ) ); ?>"  value="<?php echo esc_attr( $instance['pause'] ); ?>" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'pause' ) ); ?>" />
 		</p>
 
 		<!-- Speed -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'speed' ); ?>"><?php _e( 'Speed', 'post-slider-and-carousel' ); ?>:</label>
-			<input type="text" name="<?php echo $this->get_field_name( 'speed' ); ?>"  value="<?php echo $instance['speed']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'speed' ); ?>" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'speed' ) ); ?>"><?php esc_html_e( 'Speed', 'post-slider-and-carousel' ); ?>:</label>
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'speed' ) ); ?>"  value="<?php echo esc_attr( $instance['speed'] ); ?>" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'speed' ) ); ?>" />
 		</p>
 	<?php
   }
