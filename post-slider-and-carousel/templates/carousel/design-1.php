@@ -1,6 +1,6 @@
 <?php
 /**
- * Carousel Design 1
+ * Carousel Template 1
  * 
  * @package Post Slider and Carousel
  * @since 1.0
@@ -9,53 +9,49 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+
+global $post;
+
+// Post Meta Data
+$meta_data = array(
+				'author'	=> $atts['show_author'],
+				'post_date'	=> $atts['show_date'],
+				'comments'	=> $atts['show_comments']
+			);
 ?>
-<div class="psac-post-carousel-slide">
-	<div class="psac-post-image-bg" style="<?php echo esc_attr($image_bg_css); ?>">
-	<a href="<?php echo esc_url( $post_link ); ?>" class="psac-link-overlay"></a>
-		<div class="psac-post-carousel-content">
-		<?php if($show_category && $cate_name !='') { ?>
-			<div class="psac-post-categories">
-				<?php echo wp_kses_post($cate_name); ?>
-			</div>
-			<?php } ?>
+<div class="psacp-post-slide <?php echo esc_attr( $atts['wrp_cls'] ); ?>">
+	<div class="psacp-post-carousel-content">
+		<div class="psacp-post-img-bg" style="<?php echo esc_attr( $atts['image_style'] ); ?>">
+			<a class="psacp-post-linkoverlay" href="<?php echo esc_url( $atts['post_link'] ); ?>"></a>
+			<div class="psacp-post-overlay">
+				<?php if( $atts['show_category'] && $atts['cate_name'] ) { ?>
+					<div class="psacp-post-cats"><?php echo wp_kses_post( $atts['cate_name'] ); ?></div>
+				<?php }
 
-			<h2 class="psac-post-title">
-				<a href="<?php echo esc_url( $post_link ); ?>"><?php the_title(); ?></a>
-			</h2>
+				if( $atts['format'] == 'video' ) { echo psac_post_format_html( $atts['format'] ); } // WPCS: XSS ok. ?>
+				<h2 class="psacp-post-title">
+					<a href="<?php echo esc_url( $atts['post_link'] ); ?>"><?php the_title(); ?></a>
+				</h2>
 
-			<?php if($show_date || $show_author || $show_comments) { ?>
-				<div class="psac-post-meta">
-					<?php if($show_author) { ?>
-						<span class="psac-post-meta-innr psac-user-img"><?php the_author(); ?></span>
-					<?php } ?>
-					<?php echo ($show_author && $show_date) ? '<span class="psac-sep">/</span>' : '';
-					
-					if($show_date) { ?>
-						<span class="psac-post-meta-innr psac-time"> <?php echo get_the_date(); ?> </span>
-					<?php }
-
-					echo ($show_author && $show_date && $show_comments && !empty($comments)) ? '<span class="psac-sep">/</span>' : '';
-					
-					if(!empty($comments) && $show_comments) { ?>
-						<span class="psac-post-meta-innr psac-post-comments">
-							<a href="<?php the_permalink(); ?>#comments"><?php echo esc_html($comments.' '.$reply); ?></a>
-						</span>
-					<?php } ?>
+				<?php if( $atts['show_date'] || $atts['show_author'] || $atts['show_comments'] ) { ?>
+				<div class="psacp-post-meta psacp-post-meta-up">
+					<?php echo psac_post_meta_data( $meta_data ); // WPCS: XSS ok. ?>
 				</div>
-			<?php } ?>
+				<?php } ?>
+			</div>
 		</div>
-	</div>
-	<?php if( $show_content ) { ?>
-		<div class="psac-post-content">
-			<div class="psac-post-short-content"><?php echo psac_get_post_excerpt( $post->ID, get_the_content(), $words_limit ); ?></div>
-			<?php if( $show_read_more ) { ?>
-				<a href="<?php echo esc_url( $post_link ); ?>" class="psac-readmorebtn"><?php esc_html_e('Read More', 'post-slider-and-carousel'); ?></a>
-			<?php } ?>
-		</div>
-	<?php }
 
-	if( ! empty($tags) && $show_tags) { ?>
-		<div class="psac-post-tags"><?php echo wp_kses_post($tags); ?></div>
-	<?php } ?>
+		<?php if( $atts['show_content'] ) { ?>
+		<div class="psacp-post-content">
+			<div class="psacp-post-desc"><?php echo psac_get_post_excerpt( $post->ID, get_the_content(), $atts['content_words_limit'] ); // WPCS: XSS ok. ?></div>
+			<?php if( $atts['show_read_more'] ) { ?>
+			<a href="<?php echo esc_url( $atts['post_link'] ); ?>" class="psacp-rdmr-btn"><?php echo wp_kses_post( $atts['read_more_text'] ); ?></a>
+			<?php } ?>
+		</div>
+		<?php }
+
+		if( $atts['show_tags'] && $atts['tags'] ) { ?>
+		<div class="psacp-post-meta psacp-post-meta-down"><?php echo wp_kses_post( $atts['tags'] ); ?></div>
+		<?php } ?>
+	</div>
 </div>

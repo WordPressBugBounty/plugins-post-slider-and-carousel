@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-if ( !function_exists( 'psac_fs' ) ) {
+if ( ! function_exists( 'psac_fs' ) ) {
 
 	// Create a helper function for easy SDK access.
 	function psac_fs() {
@@ -33,7 +33,7 @@ if ( !function_exists( 'psac_fs' ) ) {
 				'has_addons'		=> false,
 				'has_paid_plans'	=> true,
 				'menu'				=> array(
-										'slug' => 'psac-about',		
+										'slug' => 'psacp-layouts',
 									),
 				'is_live'			=> true,
 			) );

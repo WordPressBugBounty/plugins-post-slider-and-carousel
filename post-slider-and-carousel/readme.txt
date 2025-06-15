@@ -1,10 +1,10 @@
 ﻿=== Post Slider and Post Carousel with Post Vertical Scrolling Widget - A Responsive Post Slider ===
-Contributors: infornweb, pluginandplay 
+Contributors: infornweb, pluginandplay
 Tags: post slider, post carousel, blog, recent post, vertical post scrolling
 Requires at least: 4.7
 Requires PHP: 5.4
 Tested up to: 6.8.1
-Stable tag: 3.2.10
+Stable tag: 3.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -156,7 +156,7 @@ However, using Post Slider and Post Carousel plugin you can design your page as 
 > * Elementor Page Builder support.
 > * Slider RTL support.
 > * 100% Multi language.
-> * Many more other features also….
+> * Many more other features also.
 >
 > View [PRO DEMO and Features](https://premium.infornweb.com/post-slider-and-carousel-pro/) for additional information.
 >
@@ -217,6 +217,27 @@ Yes, Post Slider and Carousel will work with any WordPress themes, but may requi
 2. Post Carousel Designs.
 
 == Changelog ==
+
+= 3.5.1 (15 June, 2025) =
+* [Fix] - Fixed settings default tab set to "Welcome" instead of "General".
+
+= 3.5 (20 May, 2025) =
+* **[Note] - Important notice: This is a major update. We have revamped the whole plugin with new HTML so please take a backup of your site first before updating. May your CSS / Designing customization can be affected. Also you need to reconfigure the plugin widgets if you are using it.**
+* [New] - Added the most awaited 'Layout' functionality to manage all shortcodes centrally. Now you can create a shortcode layout and manage it centrally with one click.
+* [New] - Updated 'Shortcode Builder' with auto suggestions. Now you can search post type, taxonomy, terms on the go.
+* [New] - Added plugin settings.
+* [New] - Added setting to take 'First Image From Post Content' when the post featured image is not available.
+* [New] - Added 'Enable Post Content Fix' functionality to get post content between the shortcode when post is built with page builders or shortcode.
+* [New] - Added setting for 'Post Default Featured Image' when the post featured image is not available.
+* [New] - Added 'Custom CSS' setting to add custom CSS for the plugin.
+* [New] - Added 'Disable Font Awesome CSS' setting to to disable plugin's Font Awesome CSS with respect to site speed.
+* [New] - Improved plugin performance by CSS and JS minification.
+* [New] - Hide / Remove the respected slider navigation arrow when the loop is set to false for better user experience. e.g. Slider right arrow will be removed when you reach the last slide.
+* [Update] - Updated 'Shortcode Builder' parameters with more tabs so you can find the parameters quickly.
+* [Update] - Check compatibility with Avada theme to display post content when post is built with Avada Builder.
+* [Update] - Update Freemius SDK to latest version 2.12.0
+* [Fix] - Fixed vertical scrolling widget issue when browser tab does not have focus.
+* [Note] - You need to reconfigure the Post Slider and Post Carousel plugin widgets due to code revamp.
 
 = 3.2.10 (11 May, 2025) =
 * [*] Check compatibility with WordPress 6.8.1
