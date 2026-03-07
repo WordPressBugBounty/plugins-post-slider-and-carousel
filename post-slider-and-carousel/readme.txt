@@ -1,10 +1,10 @@
 ﻿=== Post Slider and Post Carousel with Post Vertical Scrolling Widget - A Responsive Post Slider ===
 Contributors: infornweb, aadhya9
 Tags: post slider, post carousel, blog, recent post, vertical post scrolling
-Requires at least: 4.7
+Requires at least: 6.1
+Tested up to: 6.9.1
 Requires PHP: 5.4
-Tested up to: 6.9
-Stable tag: 3.5.4
+Stable tag: 3.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -217,6 +217,9 @@ Yes, Post Slider and Carousel will work with any WordPress themes, but may requi
 2. Post Carousel Designs.
 
 == Changelog ==
+
+= 3.5.5 (08 March, 2026) =
+* [New] - Added 'Gutenberg' block to select post slider layout.
 
 = 3.5.4 (04 Jan, 2026) =
 * [*] Updated plugin website links.
